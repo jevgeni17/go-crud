@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit customer</title>
+    <style>
+        body, form {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Edit customer</h1>
+<form method="POST" action="/editcustomeraction">
+    <input type="hidden" name="ID" placeholder="ID" required autofocus value="{{.ID}}">
+    <input type="text" name="firstName" placeholder="First Name" required autofocus value="{{.FirstName}}">
+    <input type="text" name="lastName" placeholder="Last Name" required value="{{.LastName}}">
+    <input type="date" name="birthDate" placeholder="Birth Date" required value="{{.BirthDate}}">
+    <select name="gender" id="gender" >
+        <option value="{{.Gender}}" selected hidden>{{.Gender}}</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <input type="text" name="email" placeholder="Email" required value="{{.Email}}">
+    <input type="text" name="address" placeholder="Address" required value="{{.Address}}">
+    <input type="submit" value="Update">
+    <p class="link"><a href="/customers">Go back</a></p>
+</form>
+
+<script>
+    // js validation here..
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All customers</title>
+    <style>
+        body {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<form method="GET" action="/search">
+    <label>Search customer by first and last name (case sensitive)</label>
+    <input type="search" id="search" name="param">
+    <button type="submit">Submit</button>
+</form>
+<p class="link"><a href="/createcustomer">Create customer</a></p>
+<h1>All customers</h1>
+
+{{range .}}
+    <p><a href="/editcustomer?id={{.ID}}">{{.FirstName}} {{.LastName}}</a>  | {{.Gender}} | {{.Email}} | {{.BirthDate}} | {{.Address}}</p>
+{{end}}
+
+
+</body>
+</html>
